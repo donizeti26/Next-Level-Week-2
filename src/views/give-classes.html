@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,7 +34,7 @@
     </header>
 
     <main>
-        <form action="" id="create-class">
+        <form action="save-classes" id="create-class" method="POST">
             <fieldset>
                 <legend>Seus dados</legend>
                 <div class="input-block">
@@ -43,7 +43,7 @@
                 </div>
                 <div class="input-block">
                     <label for="avatar">Link da sua foto<small>(comece com https://)</small></label>
-                    <input type="avatar" id="avatar" name="avatar" required>
+                    <input type="avatar" id="avatar" name="avatar" type="url" required>
                 </div>
                 <div class="input-block">
                     <label for="whatsapp">WhatsApp<small>(somente números)</small></label>
@@ -59,7 +59,7 @@
                 <legend>Sobre a aula</legend>
                 <div class="select-block">
                     <label for="subject">Matéria</label>
-                    <select name="subject" id="subject">
+                    <select name="subject" id="subject" required>
                         <option value="">Selecione uma opção</option>
                         {%for subject in subjects %}
                             <option value="{{loop.index}}">{{subject}}</option>
